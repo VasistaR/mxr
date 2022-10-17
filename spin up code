@@ -1,0 +1,43 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       C:\Users\hrida                                            */
+/*    Created:      Mon Sep 26 2022                                           */
+/*    Description:  V5 project                                                */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Motor2               motor         2               
+// Motor3               motor         3               
+// Motor11              motor         11              
+// Motor12              motor         12              
+// Motor13              motor         13              
+// Motor1               motor         1               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+
+#include "vex.h"
+
+using namespace vex;
+
+int main() {
+  // Initializing Robot Configuration. DO NOT REMOVE!
+  vexcodeInit();
+  // Grouped both motors into one instance of a class
+  motor_group left =motor_group(Motor1,Motor2,Motor3);
+  motor_group right =motor_group(Motor11,Motor12,Motor13);
+
+  // motor_group
+  // left.spinFor(forward, 5.0, seconds, 10, rpm);
+  // right.spinFor(reverse, 5.0, seconds, 10, rpm);
+
+  drivetrain robotDrive(left,right);
+  robotDrive.driveFor(1.0, "cm", waitForCompletion=false);
+
+//  Motor1.spinFor(forward, 1.0, seconds, 10, rpm);
+//  Motor11.spinFor(forward, 1.0, seconds, 10, rpm);
+  
+
+}
