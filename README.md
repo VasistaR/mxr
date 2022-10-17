@@ -1,2 +1,2 @@
 # mxr
-temporary
+temporary repository 
